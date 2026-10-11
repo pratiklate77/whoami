@@ -1,41 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitFork, ExternalLink } from "lucide-react";
+import { ExternalLink, GitFork } from "lucide-react";
+import type { Project } from "@/types";
 
-type Project = {
-  title: string;
-  desc: string;
-  tags: string[];
-  repo: string;
-  live: string;
-};
-
-const projects: Project[] = [
-  {
-    title: "StudySync Microservices",
-    desc: "Distributed microservices architecture with Kafka event topics for async communication, JWT-based authentication, and Redis caching for session and query optimization.",
-    tags: ["Spring Boot", "Kafka", "Redis", "Docker", "PostgreSQL"],
-    repo: "https://github.com/pratiklate77/StudySync-Studygroup-finder",
-    live: "#",
-  },
-  {
-    title: "Realtime Collaborator",
-    desc: "Collaborative document editing app utilizing raw WebSockets for real-time document room synchronization, supporting concurrent multi-user sessions with conflict resolution.",
-    tags: ["WebSockets", "Node.js", "TypeScript", "MongoDB"],
-    repo: "https://github.com/pratiklate77/realtime-collaborator",
-    live: "#",
-  },
-  {
-    title: "Offline Web Archiver & Crawler",
-    desc: "High-concurrency website archiving crawler built with Python and Selenium, featuring filesystem state tracking, incremental crawling, and offline asset bundling.",
-    tags: ["Python", "Selenium", "AWS S3", "FastAPI"],
-    repo: "https://github.com/pratikkarbhariLate/web-archiver",
-    live: "#",
-  },
-];
-
-export default function Projects() {
+export default function Projects({ projects }: { projects: Project[] }) {
   return (
     <section id="projects" className="py-24 px-6 max-w-4xl mx-auto">
       <motion.div
@@ -50,7 +19,7 @@ export default function Projects() {
         <h2 className="text-3xl font-bold text-zinc-50 mb-8">Projects</h2>
 
         <div className="grid gap-6">
-          {projects.map(({ title, desc, tags, repo, live }, i) => (
+          {projects.map(({ title, description, techStack, githubUrl, liveUrl }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 16 }}
@@ -63,23 +32,23 @@ export default function Projects() {
                 {title}
               </h3>
               <p className="text-zinc-400 text-sm leading-relaxed mb-4">
-                {desc}
+                {description}
               </p>
 
               <div className="flex flex-wrap gap-2 mb-5">
-                {tags.map((tag) => (
+                {techStack.map((tech) => (
                   <span
-                    key={tag}
+                    key={tech}
                     className="px-2.5 py-0.5 text-xs font-mono bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 rounded"
                   >
-                    {tag}
+                    {tech}
                   </span>
                 ))}
               </div>
 
               <div className="flex gap-3">
                 <a
-                  href={repo}
+                  href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="min-h-[44px] flex items-center gap-2 px-4 py-2 text-sm font-mono border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-zinc-100 rounded transition-colors"
@@ -87,15 +56,17 @@ export default function Projects() {
                   <GitFork size={15} />
                   GitHub Repo
                 </a>
-                <a
-                  href={live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="min-h-[44px] flex items-center gap-2 px-4 py-2 text-sm font-mono border border-zinc-700 text-zinc-300 hover:border-emerald-400/50 hover:text-emerald-400 rounded transition-colors"
-                >
-                  <ExternalLink size={15} />
-                  Live Architecture
-                </a>
+                {liveUrl ? (
+                  <a
+                    href={liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="min-h-[44px] flex items-center gap-2 px-4 py-2 text-sm font-mono border border-zinc-700 text-zinc-300 hover:border-emerald-400/50 hover:text-emerald-400 rounded transition-colors"
+                  >
+                    <ExternalLink size={15} />
+                    Live Demo
+                  </a>
+                ) : null}
               </div>
             </motion.div>
           ))}

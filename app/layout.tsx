@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { getProfile } from "@/lib/content";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -8,16 +9,17 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono-jetbrains",
 });
 
+const profile = getProfile();
+
 export const metadata: Metadata = {
-  title: "Pratik  Late | Full-Stack & Cloud Engineer",
-  description:
-    "Portfolio of Pratik  Late — Full-Stack & Cloud Engineer specializing in Spring Boot, FastAPI, WebSockets, Kafka, and AWS.",
+  title: `${profile.name} | ${profile.title}`,
+  description: profile.bio,
   keywords: [
-    "Pratik  Late",
-    "Full-Stack Engineer",
-    "Cloud Engineer",
+    profile.name,
+    "Backend Developer",
+    "Java Developer",
     "Spring Boot",
-    "FastAPI",
+    "Microservices",
     "Kafka",
     "AWS",
   ],

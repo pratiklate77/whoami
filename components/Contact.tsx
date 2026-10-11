@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import type { Profile } from "@/types";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export default function Contact() {
+export default function Contact({ profile }: { profile: Profile }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
 
@@ -92,7 +93,7 @@ export default function Contact() {
 
       <footer className="mt-24 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-600 text-sm">
         <p className="font-mono">
-          © {new Date().getFullYear()} Pratik Karbhari Late
+          © {new Date().getFullYear()} {profile.name}
         </p>
         <nav className="flex gap-6">
           {["about", "skills", "projects", "contact"].map((id) => (

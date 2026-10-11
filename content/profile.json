@@ -1,0 +1,16 @@
+{
+  "name": "Pratik Karbhari Late",
+  "title": "Backend Developer at Magma Infotech",
+  "role": "Java / Full-Stack Backend Developer",
+  "location": "Nashik, Maharashtra",
+  "email": "pratiklate22@gmail.com",
+  "bio": "Backend developer focused on building scalable microservices, real-time systems, and cloud-native applications with Java, Spring Boot, Kafka, and AWS. Currently engineering reliable backend services at Magma Infotech in Nashik, and always learning to design systems that are fast, fault-tolerant, and built to scale.",
+  "availableForWork": true,
+  "resume": "/resume.pdf",
+  "social": {
+    "github": "https://github.com/pratiklate77",
+    "linkedin": "https://linkedin.com/in/pratiklate77",
+    "email": "mailto:pratiklate22@gmail.com",
+    "twitter": "https://twitter.com/pratiklate77"
+  }
+}

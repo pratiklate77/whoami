@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Zap, Cloud } from "lucide-react";
+import { Cloud, MapPin, Server, Zap } from "lucide-react";
+import type { Profile } from "@/types";
 
 const cards = [
   {
@@ -21,7 +22,7 @@ const cards = [
   },
 ];
 
-export default function About() {
+export default function About({ profile }: { profile: Profile }) {
   return (
     <section id="about" className="py-24 px-6 max-w-4xl mx-auto">
       <motion.div
@@ -34,20 +35,10 @@ export default function About() {
         <h2 className="text-3xl font-bold text-zinc-50 mb-6">About Me</h2>
 
         <div className="bg-zinc-900/60 border border-zinc-800 rounded-lg p-6 mb-8 text-zinc-400 leading-relaxed">
-          <p>
-            I&apos;m a{" "}
-            <span className="text-zinc-200 font-medium">
-              Master of Computer Applications (MCA)
-            </span>{" "}
-            graduate with a passion for solving complex distributed systems
-            problems. My work sits at the intersection of backend engineering,
-            real-time data, and cloud infrastructure — building systems that are
-            fast, fault-tolerant, and built to scale.
-          </p>
-          <p className="mt-4">
-            I thrive in environments where reliability and performance matter,
-            and I approach every problem with a first-principles mindset — from
-            data modeling to deployment pipelines.
+          <p>{profile.bio}</p>
+          <p className="mt-4 inline-flex items-center gap-2 text-zinc-500">
+            <MapPin size={15} className="text-emerald-400" />
+            Based in {profile.location}
           </p>
         </div>
 

@@ -1,0 +1,45 @@
+{
+  "work": [
+    {
+      "company": "Magma Infotech",
+      "role": "Backend Developer",
+      "location": "Nashik, Maharashtra",
+      "startDate": "October 2026",
+      "endDate": "Present",
+      "summary": "Designing and shipping robust backend services for client-facing products, with a focus on clean architecture, reliability, and performance.",
+      "highlights": [
+        "Developed REST and event-driven APIs with Java and Spring Boot, improving request throughput and response times.",
+        "Integrated Kafka for asynchronous event pipelines and Redis for caching and session management.",
+        "Containerized services with Docker and automated deployments through CI/CD pipelines on AWS.",
+        "Collaborated with cross-functional teams to translate product requirements into scalable system designs."
+      ],
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Redis",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Savitribai Phule Pune University",
+      "degree": "Master of Computer Applications (MCA)",
+      "location": "Pune, Maharashtra",
+      "startDate": "2024",
+      "endDate": "2026",
+      "description": "Postgraduate studies focused on advanced software engineering, distributed systems, and application development."
+    },
+    {
+      "institution": "Savitribai Phule Pune University",
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "location": "Jalgaon, Maharashtra",
+      "startDate": "2020",
+      "endDate": "2023",
+      "description": "Undergraduate studies in computer applications covering programming fundamentals, databases, and web technologies."
+    }
+  ]
+}

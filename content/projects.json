@@ -1,0 +1,23 @@
+[
+  {
+    "title": "E-Commerce Microservices Platform",
+    "description": "Full-stack e-commerce platform decomposed into independently deployable microservices. Uses Kafka for async order processing and inventory updates, Redis for cart and session caching, and JWT-based authentication across services.",
+    "techStack": ["Spring Boot", "Java", "Kafka", "PostgreSQL", "Redis", "Docker"],
+    "githubUrl": "https://github.com/pratiklate77/e-commerce-microservices",
+    "liveUrl": ""
+  },
+  {
+    "title": "Real-Time Collaborative Document Editor",
+    "description": "Collaborative document editor built on raw WebSockets for real-time room synchronization, supporting concurrent multi-user sessions with conflict resolution and presence tracking.",
+    "techStack": ["WebSockets", "Node.js", "TypeScript", "MongoDB"],
+    "githubUrl": "https://github.com/pratiklate77/realtime-collaborator",
+    "liveUrl": ""
+  },
+  {
+    "title": "StudySync",
+    "description": "Distributed microservices platform for study groups with Kafka event topics for async communication, JWT authentication, and Redis caching for session and query optimization.",
+    "techStack": ["Spring Boot", "Kafka", "Redis", "Docker", "PostgreSQL"],
+    "githubUrl": "https://github.com/pratiklate77/StudySync-Studygroup-finder",
+    "liveUrl": ""
+  }
+]
